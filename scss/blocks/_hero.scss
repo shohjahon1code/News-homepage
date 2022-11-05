@@ -1,0 +1,128 @@
+.hero {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 30px;
+
+  @include media(992) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  @include media(768) {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__items:nth-child(1) {
+    grid-column: span 2;
+
+    @include media(768) {
+      grid-column: span 1;
+    }
+  }
+  .hero__items:nth-child(2) {
+    grid-column: span 1;
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: $Very-dark-blue;
+
+    @include media(768) {
+      grid-row: 300px;
+    }
+  }
+
+  &__right {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $Grayish-blue;
+    border-width: max-content;
+
+    @include media(992) {
+      padding-top: 30px;
+    }
+    &-title {
+      margin-bottom: 20px;
+      font-size: 35px;
+      font-weight: 700;
+      color: $Soft-orange;
+    }
+
+    &-title2 {
+      margin-bottom: 20px;
+      font-size: 20px;
+      color: $Off-white;
+    }
+    &-text {
+      font-size: 20px;
+      color: $Grayish-blue;
+    }
+  }
+
+  &__title {
+    font-size: 55px;
+    font-weight: 800;
+  }
+
+  &__descr {
+    margin-bottom: 60px;
+    color: $Dark-grayish-blue;
+  }
+
+  &__btn {
+    max-width: 170px;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    align-items: center;
+    background: $Soft-red;
+    color: $Off-white;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $Very-dark-blue;
+      color: $Off-white;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    @include media(768) {
+      justify-content: start;
+    }
+
+    &-img {
+      max-width: 136px;
+      min-height: 173px;
+
+      @include media(768) {
+        width: 100%;
+      }
+    }
+
+    &-num {
+      margin-bottom: 15px;
+      display: block;
+
+      font-size: 35px;
+      color: $Dark-grayish-blue;
+    }
+
+    &-title {
+      margin-bottom: 15px;
+
+      font-size: 20px;
+      color: $Very-dark-blue;
+    }
+
+    &-text {
+      color: $Dark-grayish-blue;
+    }
+  }
+}
